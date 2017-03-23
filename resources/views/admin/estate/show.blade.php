@@ -3,7 +3,7 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1>添加用户</h1>
+    <h1>小区详情</h1>
 @stop
 
 @section('content')
@@ -11,26 +11,26 @@
         <div class="col-sm-3">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">用户信息</h3>
+                    <h3 class="box-title">基本信息</h3>
                 </div>
                 <div class="box-body">
                     <img src="/images/default_avatar.jpg" class="profile-user-img img-responsive img-circle"/>
                     <h3 class="profile-username text-center">{{ $model['name'] }}</h3>
                     <ul class="list-group list-group-unbordered">
                         <li class="list-group-item">
-                            <b>邮箱</b>
-                            <a class="pull-right">{{ $model['email'] }}</a>
+                            <b>联系人</b>
+                            <a class="pull-right">{{ $model['contact_person'] }}</a>
                         </li>
                         <li class="list-group-item">
-                            <b>手机</b>
-                            <a class="pull-right"></a>
+                            <b>电话</b>
+                            <a class="pull-right">{{ $model['telephone'] }}</a>
                         </li>
                         <li class="list-group-item">
                             <b>注册时间</b>
                             <a class="pull-right">{{ $model['created_at'] }}</a>
                         </li>
                     </ul>
-                    <a href="{{ URL::action("Admin\UserController@edit", $model['id']) }}" class="btn btn-primary btn-block"><b>修改</b></a>
+                    <a href="{{ URL::action("Admin\\EstateController@edit", $model['id']) }}" class="btn btn-primary btn-block"><b>修改</b></a>
                 </div>
             </div>
         </div>

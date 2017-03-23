@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Estate;
 use App\Http\Controllers\Controller;
+use Request;
 
 class EstateController extends Controller
 {
@@ -16,6 +17,14 @@ class EstateController extends Controller
     public function create()
     {
         return view('admin/estate/create');
+    }
+
+    public function store()
+    {
+        $estate = new Estate(Request::all());
+        $estate->save();
+
+        return \Redirect::action("Admin\\EstateController@index");
     }
 
     public function edit($id)

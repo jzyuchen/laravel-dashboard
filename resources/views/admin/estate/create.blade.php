@@ -23,7 +23,7 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">地址</label>
                     <div class="col-sm-7">
-                        <input id="address" name="address" type="password" class="form-control" placeholder="请输入地址"/>
+                        <input id="address" name="address" type="text" class="form-control" placeholder="请输入地址"/>
                     </div>
                     <div class="col-sm-3"></div>
                 </div>
@@ -47,7 +47,7 @@
             <div class="box-footer">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-primary">保存</button>
-                    <a href="{{ URL::action("Admin\UserController@index") }}" class="btn btn-default">返回</a>
+                    <a href="{{ URL::action("Admin\\EstateController@index") }}" class="btn btn-default">返回</a>
                 </div>
             </div>
         </form>
