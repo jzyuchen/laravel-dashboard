@@ -34,8 +34,7 @@
                             <a class="pull-right">{{ $model['created_at'] }}</a>
                         </li>
                     </ul>
-                    <a href="{{ URL::action("Admin\\EstateController@edit", $model['id']) }}"
-                       class="btn btn-primary btn-block"><b>修改</b></a>
+                    <a href="{{ URL::action("Admin\\EstateController@edit", $model['id']) }}" class="btn btn-primary btn-block"><b>修改</b></a>
                 </div>
             </div>
         </div>
@@ -43,29 +42,12 @@
             <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#details" data-toggle="tab">基本信息</a></li>
-                    <li><a href="#account" data-toggle="tab">住户信息</a></li>
+                    <li><a href="#account" data-toggle="tab">账户信息</a></li>
                     <li><a href="#device" data-toggle="tab">绑定设备</a></li>
                 </ul>
                 <div class="tab-content">
                     <div id="details" class="tab-pane active">1</div>
-                    <div id="account" class="tab-pane">
-                        <div class="box box-primary">
-                            <div class="box-header">
-                                <a href="#" class="btn btn-primary pull-right">添加</a>
-                            </div>
-                            <div class="box-body">
-                                <table class="table table-bordered table-responsive">
-                                    <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                    </thead>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                    <div id="account" class="tab-pane">2</div>
                     <div id="device" class="tab-pane">3</div>
                 </div>
             </div>
