@@ -16,6 +16,7 @@ class CreateEstatesTable extends Migration
         Schema::create('estates', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('password');
             $table->string('address');
             $table->string('telephone');
             $table->string('contact_person');

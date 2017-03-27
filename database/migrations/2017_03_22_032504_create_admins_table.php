@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class EstateAddPassword extends Migration
+class CreateAdminsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class EstateAddPassword extends Migration
      */
     public function up()
     {
-        Schema::create('estates', function (Blueprint $table) {
-            $table->string('password');
+        Schema::create('admins', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +27,6 @@ class EstateAddPassword extends Migration
      */
     public function down()
     {
-        Schema::create('estates', function (Blueprint $table) {
-            $table->dropColumn('password');
-        });
+        Schema::dropIfExists('admins');
     }
 }

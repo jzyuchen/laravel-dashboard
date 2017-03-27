@@ -108,9 +108,9 @@ return [
     */
 
     'menu' => [
-        'ACCOUNT SETTINGS',
+        'DASHBOARD',
         [
-            'text' => 'Dashboard',
+            'text' => 'Home',
             'url'  => 'admin',
             'icon' => 'home',
         ],
@@ -130,40 +130,20 @@ return [
             'icon' => 'gg',
         ],
         [
-            'text'    => 'Multilevel',
+            'text'    => 'Management',
             'icon'    => 'share',
             'submenu' => [
                 [
-                    'text' => 'Level One',
-                    'url'  => '#',
+                    'text' => 'Admins',
+                    'url'  => 'admin/admins',
                 ],
                 [
-                    'text'    => 'Level One',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'Level Two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'Level Two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
+                    'text' => 'Roles',
+                    'url'  => 'admin/role',
                 ],
                 [
-                    'text' => 'Level One',
-                    'url'  => '#',
+                    'text' => 'Permissions',
+                    'url'  => 'admin/permissions',
                 ],
             ],
         ],
