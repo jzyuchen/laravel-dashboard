@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Permission;
 use App\Role;
 use App\Http\Controllers\Controller;
 
@@ -9,7 +10,7 @@ class RoleController extends Controller
 {
     public function index()
     {
-        return view('admin.role.index')->withList(Role::all());
+        return view('admin.role.index')->withList(Role::all())->withPermissions(Permission::all());
     }
 
     public function store()

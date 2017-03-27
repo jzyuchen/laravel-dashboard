@@ -54,19 +54,32 @@
                 <form class="form-horizontal" action="{{ URL::action('Admin\RoleController@store') }}" method="post">
                     <div class="modal-body">
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">角色名称</label>
-                            <div class="col-sm-7"><input type="text" class="form-control"/></div>
+                            <label class="col-sm-2 control-label" for="name">角色名称</label>
+                            <div class="col-sm-7"><input type="text" class="form-control" id="name" name="name"/></div>
+                            <div class="col-sm-3"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="display_name">友好名称</label>
+                            <div class="col-sm-7"><input type="text" class="form-control" id="display_name"
+                                                         name="display_name"/></div>
+                            <div class="col-sm-3"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="description">简介</label>
+                            <div class="col-sm-7"><input type="text" class="form-control" id="description"
+                                                         name="description"/></div>
                             <div class="col-sm-3"></div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">角色名称</label>
-                            <div class="col-sm-7"><input type="text" class="form-control"/></div>
-                            <div class="col-sm-3"></div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">角色名称</label>
-                            <div class="col-sm-7"><input type="text" class="form-control"/></div>
-                            <div class="col-sm-3"></div>
+                            <div class="col-sm-10">
+                                @foreach($permissions as $permission)
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="permissions"
+                                               value="{{ $permission['id'] }}"/> {{ $permission['display_name'] }}
+                                    </label>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
