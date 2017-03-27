@@ -8,6 +8,7 @@ Route::group(['middleware' => ['auth.admin']], function () {
     Route::resource("admins", "AdminController");
     Route::resource("roles", "RoleController");
     Route::resource("permissions", "PermissionController");
+    Route::resource("files", "FileController");
 
     Route::resource("estates", "EstateController");
     Route::resource("users", "UserController");
