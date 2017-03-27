@@ -3,7 +3,7 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1>User Management</h1>
+    <h1>Admin Management</h1>
 @stop
 
 @section('content')
@@ -11,7 +11,7 @@
         <div class="box-header">
             <div class="row">
                 <div class="col-sm-8">
-                    <a href="{{ URL::action("Admin\UserController@create") }}"
+                    <a href="{{ URL::action("Admin\\AdminController@create") }}"
                        class="btn btn-primary">添加</a>
                     <a href="#" class="btn btn-danger">删除</a></div>
                 <div class="col-sm-4">
@@ -43,9 +43,9 @@
                         <td>{{ $model['email'] }}</td>
                         <td>{{ $model['created_at'] }}</td>
                         <td style="width:120px">
-                            <a href="{{ URL::action("Admin\UserController@edit", $model->id) }}"
+                            <a href="{{ URL::action("Admin\\AdminController@edit", $model->id) }}"
                                class="btn btn-sm btn-info">编辑</a>
-                            <a href="{{ URL::action("Admin\UserController@show", $model->id) }}"
+                            <a href="{{ URL::action("Admin\\AdminController@show", $model->id) }}"
                                class="btn btn-sm btn-info">详情</a></td>
                     </tr>
                 @endforeach

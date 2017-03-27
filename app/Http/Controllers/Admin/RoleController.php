@@ -11,4 +11,22 @@ class RoleController extends Controller
     {
         return view('admin.role.index')->withList(Role::all());
     }
+
+    public function store()
+    {
+        return view('admin.role.create');
+    }
+
+    public function update()
+    {
+
+    }
+
+    public function destroy($id)
+    {
+        $role = Role::find($id);
+        $role->delete();
+
+        return response()->json(['success' => 0, 'message' => null, 'data' => null]);
+    }
 }

@@ -139,7 +139,7 @@ return [
                 ],
                 [
                     'text' => 'Roles',
-                    'url'  => 'admin/role',
+                    'url'  => 'admin/roles',
                 ],
                 [
                     'text' => 'Permissions',

@@ -1,9 +1,9 @@
 <?php
 
-Route::group(['middleware' => ['auth.admin', 'role:Administrators']], function () {
+Route::group(['middleware' => ['auth.admin']], function () {
     Route::get("/", "HomeController@index");
-    Route::resource("roles", "RoleController");
     Route::resource("admins", "AdminController");
+    Route::resource("roles", "RoleController");
     Route::resource("permissions", "PermissionController");
 
     Route::resource("estates", "EstateController");

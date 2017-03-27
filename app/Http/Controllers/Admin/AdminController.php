@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Admin;
 use App\Http\Controllers\Controller;
-use App\Permission;
 
-class PermissionController extends Controller
+class AdminController extends Controller
 {
-
     public function index()
     {
-        $list = Permission::paginate(20);
+        $list = Admin::paginate(20);
         return view("admin/admin/index")->withList($list);
     }
 
@@ -21,19 +20,19 @@ class PermissionController extends Controller
 
     public function edit($id)
     {
-        $model = Permission::find($id);
+        $model = Admin::find($id);
         return view('admin/admin/edit')->withModel($model);
     }
 
     public function show($id)
     {
-        $model = Permission::findOrFail($id);
+        $model = Admin::findOrFail($id);
         return view('admin/admin/show')->withModel($model);
     }
 
     public function delete($id)
     {
-        $model = Permission::find($id);
+        $model = Admin::find($id);
         $model->delete();
     }
 }
