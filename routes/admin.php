@@ -1,5 +1,8 @@
 <?php
 
+Route::get("login", "AuthController@login");
+Route::get("logout", "AuthController@logout");
+
 Route::group(['middleware' => ['auth.admin']], function () {
     Route::get("/", "HomeController@index");
     Route::resource("admins", "AdminController");
