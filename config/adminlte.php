@@ -129,27 +129,22 @@ return [
             'url'  => 'admin/devices',
             'icon' => 'gg',
         ],
+        'MANAGEMENT',
         [
-            'text'    => 'Management',
-            'icon'    => 'share',
-            'submenu' => [
-                [
-                    'text' => 'Admins',
-                    'url'  => 'admin/admins',
-                ],
-                [
-                    'text' => 'Roles',
-                    'url'  => 'admin/roles',
-                ],
-                [
-                    'text' => 'Permissions',
-                    'url'  => 'admin/permissions',
-                ],
-                [
-                    'text' => 'Files',
-                    'url'  => 'admin/files',
-                ],
-            ],
+            'text' => 'Admins',
+            'url'  => 'admin/admins',
+        ],
+        [
+            'text' => 'Roles',
+            'url'  => 'admin/roles',
+        ],
+        [
+            'text' => 'Permissions',
+            'url'  => 'admin/permissions',
+        ],
+        [
+            'text' => 'Files',
+            'url'  => 'admin/files',
         ],
     ],
 

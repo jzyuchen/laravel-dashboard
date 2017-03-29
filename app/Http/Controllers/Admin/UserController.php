@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Validator;
 
 class UserController extends Controller
 {
@@ -15,7 +17,23 @@ class UserController extends Controller
 
     public function create()
     {
-        return view('admin/users/create');
+        return view('admin/users/create')->withErrors(null);
+    }
+
+    public function store(Request $request)
+    {
+        $v = Validator::make($request->all(), [
+            'name' => 'required',
+            'password' => 'required',
+            'email' => 'required'
+        ]);
+        if ($v->fails()) {
+            return redirect()->back()->withErrors($v->errors());
+        }
+
+        $model = new User($request->all());
+        $model->save();
+        return \Redirect::action("Admin\\UserController@index");
     }
 
     public function edit($id)
@@ -30,9 +48,9 @@ class UserController extends Controller
         return view('admin/users/show')->withModel($model);
     }
 
-    public function delete($id)
+    public function destroy($id)
     {
-        $model = User::find($id);
+        $model = User::findOrFail($id);
         $model->delete();
     }
 }

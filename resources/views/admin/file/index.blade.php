@@ -3,7 +3,7 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1>添加用户</h1>
+    <h1>文件管理</h1>
 @stop
 
 @section('content')
