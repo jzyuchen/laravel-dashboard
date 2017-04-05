@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.4.16 on 2017-03-27.
+ * Generated for Laravel 5.4.16 on 2017-04-05.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -2686,29 +2686,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function flush()
         {
-            return \Illuminate\Cache\FileStore::flush();
-        }
-        
-        /**
-         * Get the Filesystem instance.
-         *
-         * @return \Illuminate\Filesystem\Filesystem 
-         * @static 
-         */
-        public static function getFilesystem()
-        {
-            return \Illuminate\Cache\FileStore::getFilesystem();
-        }
-        
-        /**
-         * Get the working directory of the cache.
-         *
-         * @return string 
-         * @static 
-         */
-        public static function getDirectory()
-        {
-            return \Illuminate\Cache\FileStore::getDirectory();
+            return \Illuminate\Cache\ArrayStore::flush();
         }
         
         /**
@@ -2719,7 +2697,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function getPrefix()
         {
-            return \Illuminate\Cache\FileStore::getPrefix();
+            return \Illuminate\Cache\ArrayStore::getPrefix();
         }
         
     }         
@@ -11429,7 +11407,7 @@ namespace Zizaco\Entrust {
         }
         
         /**
-         * Filters a route for a role or set of roles.
+         * Filters a route for a role or set of role.
          * 
          * If the third parameter is null then abort with status code 403.
          * Otherwise the $result is returned.
@@ -11437,7 +11415,7 @@ namespace Zizaco\Entrust {
          * @param string $route Route pattern. i.e: "admin/*"
          * @param array|string $roles The role(s) needed
          * @param mixed $result i.e: Redirect::to('/')
-         * @param bool $requireAll User must have all roles
+         * @param bool $requireAll User must have all role
          * @return mixed 
          * @static 
          */
@@ -11474,7 +11452,7 @@ namespace Zizaco\Entrust {
          * @param array|string $roles The role(s) needed
          * @param array|string $permissions The permission(s) needed
          * @param mixed $result i.e: Redirect::to('/')
-         * @param bool $requireAll User must have all roles and permissions
+         * @param bool $requireAll User must have all role and permissions
          * @return void 
          * @static 
          */

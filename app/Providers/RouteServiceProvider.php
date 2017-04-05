@@ -40,6 +40,8 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapWebRoutes();
 
         $this->mapAdminRoutes();
+
+        $this->mapTenantRoutes();
         //
     }
 
@@ -71,6 +73,23 @@ class RouteServiceProvider extends ServiceProvider
             'prefix' => 'admin',
         ], function ($router) {
             require base_path('routes/admin.php');
+        });
+    }
+
+    /**
+     * Define the "tenant" routes for the application.
+     *
+     * These routes are typically stateless.
+     *
+     * @return void
+     */
+    protected function mapTenantRoutes()
+    {
+        Route::group([
+            'namespace' => 'App\Http\Controllers\Tenant',
+            'prefix' => 'tenant',
+        ], function ($router) {
+            require base_path('routes/tenant.php');
         });
     }
 

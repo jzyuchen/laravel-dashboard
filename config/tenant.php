@@ -85,13 +85,13 @@ return [
     |
     */
 
-    'dashboard_url' => 'admin',
+    'dashboard_url' => 'tenant',
 
-    'logout_url' => '/admin/logout',
+    'logout_url' => '/tenant/logout',
 
     'logout_method' => null,
 
-    'login_url' => '/admin/login',
+    'login_url' => '/tenant/login',
 
     'register_url' => 'register',
 
@@ -116,7 +116,7 @@ return [
         ],
         [
             'text' => 'Estate',
-            'url'  => 'admin/estates',
+            'url'  => 'tenant/estates',
             'icon' => 'home',
         ],
         [
@@ -126,25 +126,25 @@ return [
         ],
         [
             'text' => 'Devices',
-            'url'  => 'admin/devices',
+            'url'  => 'tenant/devices',
             'icon' => 'gg',
         ],
         'MANAGEMENT',
         [
             'text' => 'Admins',
-            'url'  => 'admin/admins',
+            'url'  => 'tenant/admins',
         ],
         [
             'text' => 'Roles',
-            'url'  => 'admin/roles',
+            'url'  => 'tenant/roles',
         ],
         [
             'text' => 'Permissions',
-            'url'  => 'admin/permissions',
+            'url'  => 'tenant/permissions',
         ],
         [
             'text' => 'Files',
-            'url'  => 'admin/files',
+            'url'  => 'tenant/files',
         ],
     ],
 
