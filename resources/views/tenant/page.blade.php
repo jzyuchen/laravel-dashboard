@@ -93,7 +93,10 @@
 
                     <!-- Sidebar Menu -->
                     <ul class="sidebar-menu">
-                        @each('adminlte::partials.menu-item', $adminlte->menu(), 'item')
+                        <li class="header">Navigation</li>
+                        <li class="active"><a href="http://localhost:1080/tenant"><i class="fa fa-fw fa-home "></i> <span>首页</span></a></li>
+                        <li><a href="http://localhost:1080/tenant/devices"><i class="fa fa-fw fa-home "></i> <span>门口机管理</span></a></li>
+                        {{--@each('adminlte::partials.menu-item', $adminlte->menu(), 'item')--}}
                     </ul>
                     <!-- /.sidebar-menu -->
                 </section>

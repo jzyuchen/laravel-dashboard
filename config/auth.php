@@ -50,6 +50,11 @@ return [
             'driver' => 'session',
             'provider' => 'admins',
         ],
+
+        'tenant' => [
+            'driver' => 'session',
+            'provider' => 'tenants',
+        ],
     ],
 
     /*
@@ -78,6 +83,11 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Admin::class,
+        ],
+
+        'tenants' => [
+            'driver' => 'eloquent',
+            'model' => App\Tenant::class,
         ],
 
         // 'users' => [
@@ -110,6 +120,12 @@ return [
 
         'admins' => [
             'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+
+        'tenants' => [
+            'provider' => 'tenants',
             'table' => 'password_resets',
             'expire' => 60,
         ],
