@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDevicesTable extends Migration
+class CreateTenantsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateDevicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('devices', function (Blueprint $table) {
+        Schema::create('tenants', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('estate_id')->unsigned();
+            $table->string('name')->unique();
+            $table->string('password');
+            $table->string('contact_person')->nullable();
+            $table->string('address')->nullable();
+            $table->string('telephone')->nullable();
             $table->timestamps();
-
-            $table->foreign('estate_id')->references('id')->on('estates')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -29,6 +31,6 @@ class CreateDevicesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('devices');
+        Schema::dropIfExists('tenants');
     }
 }

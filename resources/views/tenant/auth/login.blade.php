@@ -5,8 +5,8 @@
     <div class="container">
         <div class="login-box">
             <div class="panel panel-default">
-                <div class="panel-heading"><h3 class="panel-title">管理登录</h3></div>
-                <form action="{{ url(config('adminlte.login_url', 'login')) }}" method="post">
+                <div class="panel-heading"><h3 class="panel-title">机构登录</h3></div>
+                <form action="{{ url(config('tenant.login_url', 'login')) }}" method="post">
                     <div class="panel-body">
                         <div class="form-group has-feedback">
                             <div class="input-group">

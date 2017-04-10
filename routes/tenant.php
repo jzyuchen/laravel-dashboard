@@ -1,8 +1,8 @@
 <?php
 
-Route::get("login", "LoginController@showLoginForm");
+Route::auth();
 
-Route::group(['middleware' => ['auth.tenant', 'web']], function () {
+Route::group(['middleware' => ['web', 'auth.tenant']], function () {
     Route::get("/", "HomeController@index");
     Route::resource("devices", "DeviceController");
 });

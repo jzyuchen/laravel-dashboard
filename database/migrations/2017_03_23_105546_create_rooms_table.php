@@ -23,7 +23,15 @@ class CreateRoomsTable extends Migration
             $table->integer('device_id')->unsigned();
             $table->integer('room_id')->unsigned();
 
-            $table->foreign('device_id')->references('id')->on('estates')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('device_id')->references('id')->on('devices')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('room_id')->references('id')->on('rooms')->onDelete('cascade')->onUpdate('cascade');
+        });
+
+        Schema::create('room_users', function (Blueprint $table) {
+            $table->integer('user_id')->unsigned();
+            $table->integer('room_id')->unsigned();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('room_id')->references('id')->on('rooms')->onDelete('cascade')->onUpdate('cascade');
         });
     }

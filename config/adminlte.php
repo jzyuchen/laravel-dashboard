@@ -115,8 +115,8 @@ return [
             'icon' => 'home',
         ],
         [
-            'text' => 'Estate',
-            'url'  => 'admin/estates',
+            'text' => '机构管理',
+            'url'  => 'admin/tenants',
             'icon' => 'home',
         ],
         [

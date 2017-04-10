@@ -10,7 +10,7 @@ Route::group(['middleware' => ['web', 'auth.admin']], function () {
     Route::resource("permissions", "PermissionController");
     Route::resource("files", "FileController");
 
-    Route::resource("estates", "EstateController");
+    Route::resource("tenants", "TenantController");
     Route::resource("users", "UserController");
     Route::resource("devices", "DeviceController");
 
