@@ -3,23 +3,18 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    public function login()
+    use AuthenticatesUsers;
+
+    protected $redirectTo = '/admin';
+
+    protected function guard()
     {
-        return view('admin.auth.login')->withErrors(null);
-    }
-
-    public function logout(Request $request)
-    {
-        $this->guard()->logout();
-
-        $request->session()->flush();
-
-        $request->session()->regenerate();
-
-        return redirect('/');
+        return Auth::guard('admin');
     }
 }

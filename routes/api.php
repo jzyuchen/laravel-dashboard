@@ -13,5 +13,5 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::resource("{class}", "Api\\". $class . "Controller");
+//Route::resource("{class}", "Api\\". $class . "Controller");
 

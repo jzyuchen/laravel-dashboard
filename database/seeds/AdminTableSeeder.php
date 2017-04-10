@@ -11,8 +11,6 @@ class AdminTableSeeder extends Seeder
      */
     public function run()
     {
-
-
         $role = new \App\Role();
         $role->name = 'Administrators';
         $role->display_name = 'Administrators';
@@ -28,6 +26,7 @@ class AdminTableSeeder extends Seeder
 
         $admin = new \App\Admin();
         $admin->name = 'admin';
+        $admin->password = bcrypt('admin');
         $admin->save();
         $admin->attachRole($role);
     }
