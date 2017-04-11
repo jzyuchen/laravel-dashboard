@@ -13,7 +13,7 @@ class CreateDevicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('devices', function (Blueprint $table) {
+        Schema::create('device', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('tenant_id')->unsigned();
             $table->timestamps();
@@ -29,6 +29,6 @@ class CreateDevicesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('devices');
+        Schema::dropIfExists('device');
     }
 }

@@ -59,7 +59,7 @@ $.AdminLTE.options = {
   enableBSToppltip: true,
   BSTooltipSelector: "[data-toggle='tooltip']",
   //Enable Fast Click. Fastclick.js creates a more
-  //native touch experience with touch devices. If you
+  //native touch experience with touch device. If you
   //choose to enable the plugin, make sure you load the script
   //before AdminLTE's app.js
   enableFastclick: false,

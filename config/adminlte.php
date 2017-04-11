@@ -120,13 +120,13 @@ return [
             'icon' => 'home',
         ],
         [
-            'text' => 'Users',
+            'text' => '用户管理',
             'url'  => 'admin/users',
             'icon' => 'user',
         ],
         [
-            'text' => 'Devices',
-            'url'  => 'admin/devices',
+            'text' => '设备管理',
+            'url'  => 'admin/device',
             'icon' => 'gg',
         ],
         'MANAGEMENT',

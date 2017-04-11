@@ -126,7 +126,7 @@ return [
         ],
         [
             'text' => 'Devices',
-            'url'  => 'tenant/devices',
+            'url'  => 'tenant/device',
             'icon' => 'gg',
         ],
         'MANAGEMENT',

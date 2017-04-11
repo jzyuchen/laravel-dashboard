@@ -9,20 +9,20 @@
 @section('content')
     <div class="box box-primary">
         <div class="box-header">
-            <a href="{{ URL::action("Admin\\TenantController@create") }}" class="btn btn-primary pull-right">添加</a>
+            <a href="{{ URL::action("Admin\\TenantController@create") }}" class="btn btn-primary">添加</a>
         </div>
         <div class="box-body">
             <table class="table table-hover table-bordered">
                 <thead>
                 <tr>
                     <th style="width:50px;text-align: center"><input type="checkbox" class="icheck"></th>
-                    <th style="width:100px">ID</th>
-                    <th style="width:150px">Name</th>
-                    <th style="width:150px">Telephone</th>
-                    <th style="width:150px">Contact Person</th>
-                    <th>address</th>
-                    <th style="width:150px">Created At</th>
-                    <th></th>
+                    <th style="width:100px">机构编号</th>
+                    <th style="width:150px">机构名称</th>
+                    <th style="width:150px">联系电话</th>
+                    <th style="width:150px">联系人</th>
+                    <th>地址</th>
+                    <th style="width:150px">创建时间</th>
+                    <th style="width:180px"></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -35,11 +35,14 @@
                         <td>{{ $model['contact_person'] }}</td>
                         <td>{{ $model['address'] }}</td>
                         <td>{{ $model['created_at'] }}</td>
-                        <td style="width:120px">
-                            <a href="{{ URL::action("Admin\\TenantController@edit", $model->id) }}"
-                               class="btn btn-sm btn-info">编辑</a>
+                        <td style="text-align: center">
                             <a href="{{ URL::action("Admin\\TenantController@show", $model->id) }}"
-                               class="btn btn-sm btn-info">详情</a></td>
+                               class="btn btn-xs btn-info">详情</a>
+                            <a href="{{ URL::action("Admin\\TenantController@edit", $model->id) }}"
+                               class="btn btn-xs btn-primary">编辑</a>
+                            <a href="{{ URL::action("Admin\\TenantController@show", $model->id) }}"
+                               class="btn btn-xs btn-danger">删除</a>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>

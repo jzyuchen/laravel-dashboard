@@ -1,4 +1,4 @@
-@extends('tenant.page')
+@extends('adminlte::page')
 
 @section('title', 'AdminLTE')
 

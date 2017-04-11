@@ -26,12 +26,12 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $credentials = [
-            'name' => $request->get('name'),
+            'id' => $request->get('name'),
             'password' => $request->get('password')
         ];
 
         if (Auth::guard('tenant')->attempt($credentials)) {
-            return \Redirect::action("Admin\\HomeController@index");
+            return \Redirect::action("Tenant\\HomeController@index");
         } else {
             return redirect()->back();
         }
@@ -44,6 +44,6 @@ class LoginController extends Controller
      */
     public function username()
     {
-        return 'name';
+        return 'id';
     }
 }

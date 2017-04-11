@@ -23,7 +23,7 @@ class CreateRoomsTable extends Migration
             $table->integer('device_id')->unsigned();
             $table->integer('room_id')->unsigned();
 
-            $table->foreign('device_id')->references('id')->on('devices')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('device_id')->references('id')->on('device')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('room_id')->references('id')->on('rooms')->onDelete('cascade')->onUpdate('cascade');
         });
 

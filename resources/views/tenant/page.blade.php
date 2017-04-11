@@ -42,7 +42,7 @@
                             <a href="{{ url(config('tenant.dashboard_url', 'home')) }}" class="logo">
                                 <!-- mini logo for sidebar mini 50x50 pixels -->
                                 <span class="logo-mini">{!! config('tenant.logo_mini', '<b>A</b>LT') !!}</span>
-                                <!-- logo for regular state and mobile devices -->
+                                <!-- logo for regular state and mobile device -->
                                 <span class="logo-lg">{!! config('tenant.logo', '<b>Admin</b>LTE') !!}</span>
                             </a>
 

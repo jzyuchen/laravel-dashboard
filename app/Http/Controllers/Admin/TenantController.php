@@ -35,10 +35,8 @@ class TenantController extends Controller
 
     public function update(Request $request, $id)
     {
-        dd($request);
         $model = Tenant::findOrFail($id);
-
-        $request->file($model);
+        $model->fill($request->all());
 
         $model->save();
 
@@ -47,11 +45,11 @@ class TenantController extends Controller
 
     public function show($id)
     {
-        $model = Tenant::with("devices")->findOrFail($id);
+        $model = Tenant::with("device")->findOrFail($id);
         return view('admin/tenant/show')->withModel($model);
     }
 
-    public function delete($id)
+    public function destroy($id)
     {
         $model = Tenant::find($id);
         $model->delete();
