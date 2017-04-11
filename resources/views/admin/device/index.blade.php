@@ -11,7 +11,8 @@
         <div class="box-header">
             <div class="row">
                 <div class="col-sm-8">
-                    <a href="{{ URL::action("Tenant\\DeviceController@create") }}" class="btn btn-primary">添加</a>
+                    <a href="{{ URL::action("Admin\\DeviceController@create") }}" data-toggle="modal"
+                       data-target="#details" class="btn btn-primary">添加</a>
                     <a href="#" class="btn btn-info">导入设备</a>
                     <a href="#" class="btn btn-danger">删除</a>
                 </div>
@@ -44,9 +45,9 @@
                         <td>{{ $model['email'] }}</td>
                         <td>{{ $model['created_at'] }}</td>
                         <td style="width:120px">
-                            <a href="{{ URL::action("Tenant\\DeviceController@edit", $model->id) }}"
+                            <a href="{{ URL::action("Admin\\DeviceController@edit", $model->id) }}"
                                class="btn btn-sm btn-info">编辑</a>
-                            <a href="{{ URL::action("Tenant\\DeviceController@show", $model->id) }}"
+                            <a href="{{ URL::action("Admin\\DeviceController@show", $model->id) }}"
                                class="btn btn-sm btn-info">详情</a></td>
                     </tr>
                 @endforeach
@@ -55,4 +56,23 @@
             {!! $list->render() !!}
         </div>
     </div>
+
+    <div id="details" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">Loading</div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+@stop
+
+@section("js")
+    <script type="text/javascript">
+        $(function () {
+
+            $('#details').on('closed.bs.alert', function () {
+                $("#details > .modal-dialog > .modal-content").empty();
+            })
+        });
+    </script>
 @stop

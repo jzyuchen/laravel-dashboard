@@ -126,7 +126,7 @@ return [
         ],
         [
             'text' => '设备管理',
-            'url'  => 'admin/device',
+            'url'  => 'admin/devices',
             'icon' => 'gg',
         ],
         'MANAGEMENT',
